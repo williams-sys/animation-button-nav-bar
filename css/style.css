@@ -1,0 +1,156 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Roboto Mono', monospace;
+  animation-name: animated-body;
+  animation-duration: 1s;
+  color: #02203c;
+}
+h1{
+  font-family: 'Roboto Mono', monospace;
+}
+@keyframes animated-body {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+nav{
+  position: fixed;
+  top: 0;
+  z-index: 2001;
+}
+
+header {
+  height: 10vh;
+}
+header a {
+  font-family: 'Roboto Mono', monospace;
+  text-decoration: none;
+}
+
+.domrey-menu {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+.domrey-menu li {
+  padding: 0 1em;
+}
+.domrey-menu li a {
+  text-decoration: none;
+  color: #02203c;
+  transition: 0.3s ease;
+  font-size: 15px;
+  padding: 7px 13px;
+  border-radius: 3px;
+}
+.domrey-menu li a:hover {
+  background-color: #1c6cb3;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.domrey-menu li a.active {
+  background-color: #1c6cb3;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+
+
+.line-1,
+.line-2,
+.line-3 {
+  width: 25px;
+  height: 0.1em;
+  background: #313131;
+}
+.line-2 {
+  margin: 0.3em 0;
+}
+.rotate-domrey-bars .line-1 {
+  transform: rotate(-405deg) translate(-5px, 3px);
+}
+.rotate-domrey-bars .line-2 {
+  opacity: 0;
+}
+.rotate-domrey-bars .line-3 {
+  transform: rotate(405deg) translate(-5px, -4px);
+}
+.domrey-bars {
+  cursor: pointer;
+  display: none;
+  z-index: 5;
+}
+.domrey-bars div {
+  transition: 0.5s;
+}
+
+/*Apply styles after scroll*/
+.scrolling-active{
+  background-color: #dbdbdb;
+  box-shadow: 0 3px 1rem rgba(0,0,0,.1);
+  transition: 1s;
+}
+
+.scrolling-active nav ul li a{
+  color: #313131;
+}
+/*Apply styles after scroll end*/
+
+@media only screen and (max-width: 850px) {
+  .domrey-time {
+    z-index: 5;
+  }
+  header {
+    justify-content: space-between;
+    padding: 0 1em;
+  }
+  .domrey-bars {
+    width: 25px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .domrey-menu {
+    position: fixed;
+    padding-top: 15%;
+    top: 0;
+    right: -50%;
+    width: 45%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    transition: 0.3s;
+    background: #dedcdc;
+    box-shadow: 0 3px 1rem rgba(0,0,0,.1);
+  }
+  .domrey-menu li {
+    padding: 0;
+    margin: 1.5em 0;
+  }
+  .domrey-bars {
+    display: block;
+  }
+
+  .show-domrey-menu {
+    right: 0;
+  }
+
+}
